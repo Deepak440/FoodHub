@@ -8,7 +8,6 @@ router.get('/' , asyncHandler(async (req , res) =>{
     const users = await User.find({});
     res.send(users);
 
-
 }));
 
 export default router;

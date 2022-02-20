@@ -3,13 +3,9 @@ import { Card, ListGroup , Button} from 'react-bootstrap'
 
 
 const FoodItem = ({foodItem}) => {
+  const cart = [];
 
-  const addToCartHandler = (id) => {
-    const cart = [];
-    cart.push(id);
-     localStorage.setItem('CART', cart);
-
-  }
+ 
 
   return (
     <Card className = 'my-3 p-3 rounded '>
@@ -31,11 +27,8 @@ const FoodItem = ({foodItem}) => {
 
           <ListGroup>
                 <ListGroup.Item>
-                  <Button
-                    onClick  = {addToCartHandler(foodItem._id)}
-                    className='btn-block'
-                    type='button'
-                  >
+                  <Button onClick={() => { cart.push(foodItem._id);
+     localStorage.setItem('CART', JSON.stringify(cart))}} className='btn-block' type='button' >
                     Add to Cart
                   </Button>
                 </ListGroup.Item>

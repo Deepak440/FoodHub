@@ -1,14 +1,9 @@
 import express from "express";
-import asyncHandler from "express-async-handler";
-import Restaurant from '../models/restaurantModel.js';
+import { getRestaurants, getRestaurantDetail } from "../controller/restaurantController.js";
 
 const router = express.Router();
 
-router.get('/' ,asyncHandler(async (req , res) =>{
-    const restaurants = await Restaurant.find({});
-    res.send(restaurants);
-
-
-}));
+router.route("/").get(getRestaurants);
+router.route("/:id").get(getRestaurantDetail);
 
 export default router;

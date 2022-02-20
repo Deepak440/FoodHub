@@ -3,6 +3,10 @@ import mongoose from 'mongoose';
 const {Schema } = mongoose;
 
 const foodItemsSchema = Schema({
+    _id: {
+        type : Number,
+        required : true,
+    },
     name : {
         type : String,
         required : true
@@ -36,16 +40,12 @@ const restaurantSchema = Schema({
         required : true
 
     },
-    description :{
-        type : String,
-        required :true  
-    },
     numReviews :{
         type : Number,
         required :true,
         default :0  
     },
-    foodItems :[foodItemsSchema],
+    foodItem :[foodItemsSchema],
  
 
 }, {

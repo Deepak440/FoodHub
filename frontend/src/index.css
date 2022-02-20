@@ -1,3 +1,9 @@
 main{
     min-height: 80vh;
 }
+
+.HomeImage {
+    text-align: center;
+    padding: 20px;
+    height: 400px;
+}

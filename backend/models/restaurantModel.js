@@ -2,8 +2,6 @@ import mongoose from 'mongoose';
 
 const {Schema } = mongoose;
 
-
-
 const foodItemsSchema = Schema({
     name : {
         type : String,
